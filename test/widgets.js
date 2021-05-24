@@ -107,9 +107,7 @@ describe('Widgets', function() {
 
     const args = {
       outerLayout: '@apostrophecms/template:outerLayout.html',
-      permissions: req.user && (req.user._permissions || {}),
       scene: 'apos',
-      refreshing: false,
       query: req.query,
       url: req.url,
       page: goodPageDoc
@@ -136,9 +134,7 @@ describe('Widgets', function() {
 
     const args = {
       outerLayout: '@apostrophecms/template:outerLayout.html',
-      permissions: req.user && (req.user._permissions || {}),
       scene: 'apos',
-      refreshing: false,
       query: req.query,
       url: req.url,
       page: badPageDoc

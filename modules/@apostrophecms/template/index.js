@@ -270,8 +270,7 @@ module.exports = {
           _.defaults(merged, req.data);
         }
         _.defaults(merged, {
-          user: req.user,
-          permissions: (req.user && req.user._permissions) || {}
+          user: req.user
         });
 
         if (module.templateData) {
@@ -588,8 +587,6 @@ module.exports = {
       // * `url` (`req.url`)
       // * `user` (`req.user`)
       // * `query` (`req.query`)
-      // * `permissions` (`req.user._permissions`)
-      // * `refreshing` (true if we are refreshing the content area of the page without reloading)
       //
       // async function.
 
@@ -642,9 +639,7 @@ module.exports = {
 
         const args = {
           outerLayout: decorate ? '@apostrophecms/template:outerLayout.html' : '@apostrophecms/template:refreshLayout.html',
-          permissions: req.user && (req.user._permissions || {}),
           scene,
-          refreshing: !decorate,
           // Make the query available to templates for easy access to
           // filter settings etc.
           query: req.query,
