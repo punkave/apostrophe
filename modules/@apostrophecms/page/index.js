@@ -1483,7 +1483,6 @@ database.`);
           providePage = false;
         }
         const args = {
-          edit: providePage ? req.data.bestPage._edit : null,
           slug: providePage ? req.data.bestPage.slug : null,
           page: providePage ? req.data.bestPage : null
         };
